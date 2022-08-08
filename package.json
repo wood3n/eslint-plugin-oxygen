@@ -1,0 +1,25 @@
+{
+  "name": "eslint-plugin-oxygen",
+  "version": "1.0.0",
+  "author": "wood3n",
+  "license": "MIT",
+  "description": "eslint plugin",
+  "main": "index.js",
+  "homepage": "https://github.com/wood3n/eslint-plugin-oxygen",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin-react"
+  ],
+  "peerDependencies": {
+    "eslint": ">=8.0.0"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.32.0",
+    "@typescript-eslint/parser": "^5.32.0",
+    "eslint": "^8.21.0",
+    "eslint-plugin-html": "^7.1.0",
+    "eslint-plugin-react": "^7.30.1",
+    "typescript": "^4.7.4"
+  }
+}
