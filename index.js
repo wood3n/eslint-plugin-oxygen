@@ -17,7 +17,6 @@ module.exports = {
           jsx: true
         },
         // @typescript-eslint/parser 特殊配置
-        tsconfigRootDir: __dirname,
         project: ['./tsconfig.json'],
       },
       plugins: ['@typescript-eslint','react', 'html'],
