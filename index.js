@@ -4,28 +4,21 @@ module.exports = {
       env: {
         browser: true,
         es2022: true,
-        node: true,
-        worker: true
+        node: true
       },
-      parser: '@typescript-eslint/parser',
+      // js 文件走默认 parser
       parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
-        allowReserved: false,
         ecmaFeatures: {
-          impliedStrict: true,
-          jsx: true
+          jsx: true,
         },
-        // @typescript-eslint/parser 特殊配置
-        project: ['./tsconfig.json'],
       },
-      plugins: ['@typescript-eslint','react', 'html'],
+      plugins: ['react', 'html'],
       extends: [
         'eslint:recommended',
         'plugin:react/recommended',
-        'plugin:react/jsx-runtime',
-        'plugin:@typescript-eslint/recommended',
-        'plugin:@typescript-eslint/recommended-requiring-type-checking',
+        'plugin:react/jsx-runtime'
       ],
       // eslint-plugin-react setting
       settings: {
@@ -33,6 +26,25 @@ module.exports = {
           version: 'detect'
         }
       },
+      overrides: [
+        {
+          files: ['*.ts', '*.tsx'],
+          parser: '@typescript-eslint/parser',
+          plugins: ['@typescript-eslint'],
+          extends: ['plugin:@typescript-eslint/recommended', 'plugin:@typescript-eslint/recommended-requiring-type-checking'],
+          parserOptions: {
+            ecmaVersion: 'latest',
+            sourceType: 'module',
+            allowReserved: false,
+            ecmaFeatures: {
+              impliedStrict: true,
+              jsx: true
+            },
+            // @typescript-eslint/parser 特殊配置
+            project: ['./tsconfig.json', './tsconfig.node.json'],
+          },
+        }
+      ],
       rules: {
         quotes: ['error', 'single'],
         'jsx-quotes': ['error', 'prefer-single'],
